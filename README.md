@@ -89,7 +89,7 @@ autonumber
 
 ## 💼 License
 
-    Zenflows crypto
+    Client Zencode
 
     Copyright (c) 2021-2022 Dyne.org foundation, Amsterdam
 
