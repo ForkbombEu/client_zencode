@@ -1,0 +1,22 @@
+
+# This script can also be run by anyone, but typically it will be organizer
+# The scirpt will succeed if all the public keys used in the 'Create the reflow seal'
+# are found in the session after everyone has signed and aggregated the signatures.
+# Note that fingerprints are not checked at this stage. 
+
+Scenario 'reflow' : Verify the signatures
+
+# here we load the reflow seal and the original Object that was signed
+Given I have a 'reflow seal'
+Given I have a 'string dictionary' named 'Object'
+
+# Here we generate the 'identity', with data that presumably was the same
+# as the one used when the 'seal' was generated
+When I create the reflow identity of 'Object'
+
+
+# Below we're verifying if the 'identity' matches, by doing a simple string comparison
+When I verify 'reflow identity' is equal to 'identity' in 'reflow seal'
+
+When I verify the reflow seal is valid
+Then print the string 'Success: the Reflow Seal and all the signatures are verified'

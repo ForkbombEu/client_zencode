@@ -1,0 +1,14 @@
+
+# This script needs to be repeated once per every Participant, 
+# whose reflow public key was found into the list of publc keys, used in the 'Create the reflow seal'
+
+Scenario 'reflow': sign the reflow seal 
+Given I have a 'credentials'
+Given I have a 'keyring'
+Given I have a 'reflow seal'
+Given I have a 'issuer public key' from 'The Authority'
+
+# Here the participant is producing a signature, which will later 
+# be added to the reflow seal, along with the other signatures  
+When I create the reflow signature
+Then print the 'reflow signature'

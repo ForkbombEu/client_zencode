@@ -1,0 +1,24 @@
+
+# This script can be executed by anybody
+# Typically it will be the Organizer, but it's not a must as no private keys are required
+
+Scenario 'reflow': add the signature to the seal
+
+# Here we load a multisig seal, which can be empty or not. 
+Given I have a 'reflow seal'
+Given I have a 'issuer public key' in 'The Authority'
+
+# Here we load one signature
+Given I have a 'reflow signature'
+
+When I aggregate all the issuer public keys
+When I verify the reflow signature credential
+
+# Using the fingerprint (adding it and checking that it's new) is optional and can be skipped.
+# Due to the nature of the script, its execution grows as the participant
+# number grows. The same sort of check can be implemented in a numer of different ways,
+# depending on the flow. 
+When I verify reflow signature fingerprint is new
+When I add the reflow fingerprint to the reflow seal
+When I add the reflow signature to the reflow seal
+Then print the 'reflow seal'
