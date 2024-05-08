@@ -69,9 +69,9 @@ autonumber
 ```
 ### Zencode
 
-- [keypairoomClient-8-9-10-11-12](src/keypairoomClient-8-9-10-11-12.ts)
-- [keypairoomServer-6-7](src/keypairoomServer-6-7.zen)
-- [keypairoomClientRecreateKeys](src/keypairoomClientRecreateKeys.ts)
+- [keypairoomClient-8-9-10-11-12](keypairoom/keypairoomClient-8-9-10-11-12.zen)
+- [keypairoomServer-6-7](keypairoom/keypairoomServer-6-7.zen)
+- [keypairoomClientRecreateKeys](keypairoom/keypairoomClientRecreateKeys.zen)
 
 ### Notes
 
