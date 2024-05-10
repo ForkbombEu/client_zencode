@@ -10,6 +10,8 @@
 # The organizer can be anyone and the different scripts can be executed by different 
 # actors or microservices
 
+Rule input encoding base58
+
 Scenario 'reflow': creation of reflow seal
 
 # Below we are loading a 'reflow public key array' that contains all the public keys
