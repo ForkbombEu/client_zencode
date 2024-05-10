@@ -6,7 +6,7 @@ Scenario 'reflow': add the signature to the seal
 
 # Here we load a multisig seal, which can be empty or not. 
 Given I have a 'reflow seal'
-Given I have a 'issuer public key' in 'The Authority'
+Given I have a 'issuer public key' 
 
 # Here we load one signature
 Given I have a 'reflow signature'
