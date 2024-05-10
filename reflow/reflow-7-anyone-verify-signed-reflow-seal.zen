@@ -8,11 +8,11 @@ Scenario 'reflow' : Verify the signatures
 
 # here we load the reflow seal and the original Object that was signed
 Given I have a 'reflow seal'
-Given I have a 'string dictionary' named 'Object'
+Given I have a 'string dictionary' named 'reflow_seal_source'
 
 # Here we generate the 'identity', with data that presumably was the same
 # as the one used when the 'seal' was generated
-When I create the reflow identity of 'Object'
+When I create the reflow identity of 'reflow_seal_source'
 
 
 # Below we're verifying if the 'identity' matches, by doing a simple string comparison
