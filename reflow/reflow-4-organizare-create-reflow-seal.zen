@@ -1,0 +1,40 @@
+
+
+#
+# This script is executed by the 'Organizer', which is someone that will take care of:
+# - Collecting the public keys of the participants 
+# - Creating the reflow seal 
+# - Collecting the participants signatures and adding them the reflow seal
+# - Checking if all the signatures are there.
+#
+# The organizer can be anyone and the different scripts can be executed by different 
+# actors or microservices
+
+Scenario 'reflow': creation of reflow seal
+
+# Below we are loading a 'reflow public key array' that contains all the public keys
+# of all the participants to the mulitsignature session. The array needs to be created 
+# separately
+Given I have a 'reflow public key dictionary' named 'public keys'
+
+# Here instead we load the data that will be used to generate the 'reflow identity': 
+# this is some data to give context to the session, it can be a simple object like a string
+# or a number, ore a complex object like in this example 
+Given I have a 'string dictionary' named 'Sale'
+
+# Here we aggregate the pubblic keys
+When I aggregate the reflow public key from array 'public keys'
+
+# Here we create the 'identity' from the data loaded before 
+# The idenity will be stored in the multisgnature object and can later be verified,
+# independently from the signatures and the rest of the object
+When I create the reflow identity of 'Sale'
+When I rename the 'reflow identity' to 'SaleIdentity'
+
+# this is the creation of the multisignature object, the 'reflow seal'
+When I create the reflow seal with identity 'SaleIdentity'
+
+#The output here is an empty reflow seal, ready to be signed 
+Then print the 'reflow seal'
+
+
